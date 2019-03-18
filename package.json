@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "test": "mocha --require @babel/register --require ignore-styles --require test.js \"src/**/*.spec.js\""
+    "test": "mocha --require @babel/register --require ignore-styles --require jsdom-global/register --require test.js \"src/**/*.spec.js\""
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "mini-css-extract-plugin": "^0.5.0",
     "mocha": "^6.0.2",
     "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "sass-loader": "^7.1.0",
@@ -40,5 +41,9 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
+  },
+  "devDependencies": {
+    "jsdom": "^14.0.0",
+    "jsdom-global": "^3.0.2"
   }
 }
