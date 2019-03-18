@@ -228,7 +228,7 @@ describe('<Game />', () => {
       null,
       null
     ]);
-    expect(state.turn).to.equal('O');
+    expect(state.turn).to.equal('X');
     expect(state.history.length).to.equal(2);
   });
 });

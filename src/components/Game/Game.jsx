@@ -73,7 +73,13 @@ class Game extends React.Component {
     });
   }
 
-  backHandler() {}
+  backHandler() {
+    this.setState({
+      history: this.state.history.slice(0, -1),
+      current: this.state.history[this.state.history.length - 1],
+      turn: this.switchTurn()
+    });
+  }
 
   render() {
     const { current } = this.state;
