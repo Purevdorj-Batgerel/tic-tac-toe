@@ -1,6 +1,8 @@
 import React from 'react';
 import Title from '../Title/Title.jsx';
 import Board from '../Board/Board.jsx';
+import ControlPanel from '../ControlPanel/ControlPanel.jsx';
+
 import './Game.scss';
 
 class Game extends React.Component {
@@ -61,6 +63,10 @@ class Game extends React.Component {
     return false;
   }
 
+  resetHandler() {}
+
+  backHandler() {}
+
   render() {
     const { current } = this.state;
     let status;
@@ -82,6 +88,11 @@ class Game extends React.Component {
         <Title title="Tic - Tac - Toe" />
         <div className="status">{status}</div>
         <Board cells={current.cells} clickHandler={i => this.clickHandler(i)} />
+        <ControlPanel
+          resetHandler={_ => this.resetHandler()}
+          backHandler={_ => this.backHandler()}
+          backDisabled={this.state.history.length == 0}
+        />
       </div>
     );
   }

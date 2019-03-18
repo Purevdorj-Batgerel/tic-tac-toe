@@ -10,7 +10,8 @@ const Cell = props => (
 );
 
 Cell.propTypes = {
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  value: PropTypes.string
 };
 
 export default Cell;
