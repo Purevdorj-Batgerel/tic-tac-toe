@@ -155,4 +155,38 @@ describe('<Game />', () => {
     expect(state.turn).to.equal('O');
     expect(state.history.length).to.equal(5);
   });
+
+  it('reset Button test', () => {
+    const wrapper = mount(<Game />);
+
+    wrapper
+      .find('.cell')
+      .at(0)
+      .simulate('click');
+    wrapper
+      .find('.cell')
+      .at(1)
+      .simulate('click');
+    wrapper
+      .find('.cell')
+      .at(4)
+      .simulate('click');
+
+    wrapper
+      .find('button')
+      .at(1)
+      .simulate('click');
+
+    wrapper.update();
+
+    const state = wrapper.state();
+
+    expect(state).to.deep.equal({
+      history: [],
+      current: {
+        cells: Array(9).fill(null)
+      },
+      turn: 'X'
+    });
+  });
 });
