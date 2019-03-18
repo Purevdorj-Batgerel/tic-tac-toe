@@ -17,8 +17,6 @@ describe('<MyComponent />', () => {
 
     const state = wrapper.state();
 
-    console.log(state);
-
     expect(state.current.cells).to.eql([
       'X',
       null,
