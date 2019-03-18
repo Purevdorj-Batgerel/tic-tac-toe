@@ -63,7 +63,15 @@ class Game extends React.Component {
     return false;
   }
 
-  resetHandler() {}
+  resetHandler() {
+    this.setState({
+      history: [],
+      current: {
+        cells: Array(9).fill(null)
+      },
+      turn: 'X'
+    });
+  }
 
   backHandler() {}
 
