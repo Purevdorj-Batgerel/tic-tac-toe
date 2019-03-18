@@ -92,6 +92,8 @@ describe('<Game />', () => {
 
     const state = wrapper.state();
 
+    expect(wrapper.find('.status').text()).to.equal('X won');
+
     expect(state.current.cells).to.eql([
       'X',
       'O',
