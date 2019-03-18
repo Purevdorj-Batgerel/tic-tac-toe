@@ -1,4 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-render(<div>App</div>, document.getElementById('contents'));
+import Game from './components/Game/Game.jsx';
+
+render(<Game />, document.getElementById('contents'));
