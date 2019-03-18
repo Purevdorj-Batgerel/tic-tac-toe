@@ -27,6 +27,10 @@ class Game extends React.Component {
     let oldArr = [...this.state.current.cells];
     let newArr = [...this.state.current.cells];
 
+    if (oldArr[i] !== null) {
+      return;
+    }
+
     newArr[i] = this.state.turn;
 
     this.setState({
