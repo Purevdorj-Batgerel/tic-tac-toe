@@ -172,6 +172,7 @@ describe('<Game />', () => {
       .at(4)
       .simulate('click');
 
+    //find Reset Button
     wrapper
       .find('button')
       .at(1)
@@ -188,5 +189,46 @@ describe('<Game />', () => {
       },
       turn: 'X'
     });
+  });
+
+  it('back Button test', () => {
+    const wrapper = mount(<Game />);
+
+    wrapper
+      .find('.cell')
+      .at(0)
+      .simulate('click');
+    wrapper
+      .find('.cell')
+      .at(1)
+      .simulate('click');
+    wrapper
+      .find('.cell')
+      .at(4)
+      .simulate('click');
+
+    //Find Back Button
+    wrapper
+      .find('button')
+      .at(0)
+      .simulate('click');
+
+    wrapper.update();
+
+    const state = wrapper.state();
+
+    expect(state.current.cells).to.eql([
+      'X',
+      'O',
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]);
+    expect(state.turn).to.equal('O');
+    expect(state.history.length).to.equal(2);
   });
 });
