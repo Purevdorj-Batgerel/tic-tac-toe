@@ -1,3 +1,11 @@
 button {
-  margin: 16px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  width: 45%;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #eee;
+  border-radius: 3px;
 }

@@ -1,13 +1,44 @@
 body {
   margin: 0;
 }
+#contents {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff, #f3f6f8);
+  &::after {
+    content: '';
+    position: fixed;
+    left: -22%;
+    top: 50%;
+    right: 0;
+    width: 125%;
+    height: 100%;
+    background: linear-gradient(135deg, #f3f6f8, #fff);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+}
 
 #game {
-  margin: 64px;
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 64px;
+  background: white;
+  box-shadow: 0 0 3px #8a8787;
+  border-radius: 3px;
   font-family: 'Poppins', sans-serif;
+  transition: box-shadow 0.4s ease-in;
+  &.won {
+    box-shadow: 0 0 11px #3e3e3e;
+  }
 }
 
 .status {
   text-align: center;
   margin-bottom: 16px;
+  font-size: 20px;
 }

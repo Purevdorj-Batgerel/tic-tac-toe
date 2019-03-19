@@ -98,7 +98,7 @@ class Game extends React.Component {
     }
 
     return (
-      <div id="game">
+      <div id="game" className={finish ? 'won' : ''}>
         <Title title="Tic - Tac - Toe" />
         <div className="status">{status}</div>
         <Board cells={current.cells} clickHandler={i => this.clickHandler(i)} />
